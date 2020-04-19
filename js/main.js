@@ -1,5 +1,5 @@
 let cards = document.querySelectorAll(".heroes_wrapper_item");
-const body = document.getElementsByTagName('body')[0];
+
 cards.forEach((card) => {
     card.addEventListener("click", function() {
         card.classList.toggle("active");
@@ -13,8 +13,11 @@ function toggleMenu () {
     hamburger.classList.toggle('hamburger_active');
     menu.classList.toggle('menu_active');
     menuItem.forEach(item => {
-      hamburger.classList.toggle('hamburger_active');
-          menu.classList.toggle('menu_active');
+        item.addEventListener('click', ()=>{
+            hamburger.classList.remove('hamburger_active');
+            menu.classList.remove('menu_active');
+            document.body.classList.remove('no_scroll');
+        });
     });
     document.body.classList.toggle('no_scroll');
 }
