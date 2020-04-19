@@ -1,5 +1,5 @@
 let cards = document.querySelectorAll(".heroes_wrapper_item");
-
+const body = document.querySelector(".body");
 cards.forEach((card) => {
     card.addEventListener("click", function() {
         card.classList.toggle("active");
@@ -9,16 +9,15 @@ cards.forEach((card) => {
 window.addEventListener('DOMContentLoaded', () => {
     const menu = document.querySelector('.menu'),
     menuItem = document.querySelectorAll('.menu_item'),
-    hamburger = document.querySelector('.hamburger'),
-    body = document.querySelectorAll(".body"),
-    width = window.innerWidth || document.documentElement.clientWidth  || document.body.clientWidth;
+    hamburger = document.querySelector('.hamburger');  
+    let width = window.innerWidth || document.documentElement.clientWidth  || document.body.clientWidth;
+    console.log(body);
 
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('hamburger_active');
         menu.classList.toggle('menu_active');
         if (width <= 767 )  {
             body.classList.toggle('no_scroll');}
-        
     });
 
     menuItem.forEach(item => {
